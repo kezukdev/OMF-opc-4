@@ -1,0 +1,19 @@
+@mixin btn-color {
+    background: $second-color;
+    background: linear-gradient(193deg, $main-color -11%, $second-color 123%);
+}
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin pseudo-elem {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,148 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.restaurants-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 17px;
+
+    img {
+        height: 173px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+    }   
+    .card-content {
+        width: 100%;
+        padding: 13px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .card-title {
+        margin-bottom: 4px;
+        font-size: 18px;
+    }
+    .card-subtitle {
+        font-size: 17px;
+        font-weight: 300;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.new {
+    display: flex;
+    align-self: flex-end;
+    position: absolute;
+    color: $new-text;
+    background-color: $third-color;
+    font-size: 14px;
+    margin: 10px 13px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.menu-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 12px 0 5px 0;
+    width: 100%;
+
+    .card {
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+        cursor: pointer;
+    }
+    
+    .card-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        &:hover {
+            .check {
+                width: 59px;
+            }
+        }
+    }
+
+    .card-content-text {
+        padding: 12px 8px;
+        min-width: 200px;
+
+        .card-title {
+            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: 500;
+            @include ellipsis;
+        }
+        .card-subtitle {
+            font-size: 15px;
+            font-weight: 300;
+            @include ellipsis;
+        }
+    }
+
+    .card-content-end {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        box-sizing: border-box;
+
+        .price {
+            margin-top: 30px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .check {
+            width: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: $third-color;
+            transition: width 1s;
+            border-radius: 0 1em 1em 0;
+    
+            .fa-check-circle {
+                color: white;
+                font-size: 22px;
+                margin-top: 23px;
+                margin-left: 19px;
+            }
+        }
+    }
+}
+
+@media /*Desktop*/ (min-width: 1200px) {
+
+    .restaurants-cards {
+        gap: 60px;
+        padding-bottom: 33px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        
+        a {
+            width: 100%;
+        }
+    }
+
+    .card-content {
+        margin-left: 10px;
+    }
+}

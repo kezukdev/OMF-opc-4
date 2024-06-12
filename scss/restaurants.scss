@@ -1,0 +1,79 @@
+@import "settings.scss";
+@import "utils/animations.scss";
+@import "utils/mixins.scss";
+@import "utils/variables";
+@import "components/titles.scss";
+@import "components/cards.scss";
+@import "components/button.scss";
+@import "layout/header.scss";
+@import "layout/footer.scss";
+
+.background-img {
+    width: 375px;
+    height: 275px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.restaurant-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 31px;
+    margin-bottom: -12px;
+}
+
+.restaurant-menu {
+    background-color: $background-color;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 15px;
+        margin-top: -60px;
+        section {
+            opacity: 0;
+        }
+    }
+}
+
+.starter {
+    animation: slideUp 1s forwards;
+}
+
+.main-course {
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.dessert {
+    animation: slideUp 1s forwards;
+    animation-delay: 1s;
+}
+
+@media /*Desktop*/ (min-width: 1200px) {
+
+    .background-img {
+        height: 385px;
+    }
+
+    .restaurant-header {
+        gap: 16px;
+        justify-content: center;
+        margin-top: 46px;
+        margin-bottom: 0;
+    }
+    
+    .restaurant-menu {
+        margin: -40px auto 0 auto;
+        width: 73%;
+        &-content {
+            margin: auto;
+            width: 60%;
+        }
+    }
+}
